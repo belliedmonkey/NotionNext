@@ -254,9 +254,7 @@ const ExternalPlugin = props => {
           </>
       
       )}
-      {
-
-        (CLARITY_ID && <>
+      {CLARITY_ID && (<>
         
         <script
             async
