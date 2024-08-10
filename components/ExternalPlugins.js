@@ -269,6 +269,23 @@ const ExternalPlugin = props => {
                 `
             }}
           />
+          <script src="https://cdn.amplitude.com/libs/analytics-browser-2.10.0-min.js.gz"></script>
+          <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.4.0-min.js.gz"></script>
+
+
+        <script
+            async
+            dangerouslySetInnerHTML={{
+              __html: `
+               window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 })).promise.then(function () {
+        window.amplitude.init("c7f849b23574b8657bc31e7bd66735eb", {
+            autocapture: { elementInteractions: true }
+        });
+    });
+  });
+                `
+            }}
+          />
         
         </>)
 
