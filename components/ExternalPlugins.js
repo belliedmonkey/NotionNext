@@ -254,8 +254,8 @@ const ExternalPlugin = props => {
           </>
       
       )}
-      {CLARITY_ID && (<>
-        
+      {(
+        <>
         <script
             async
             dangerouslySetInnerHTML={{
@@ -270,8 +270,6 @@ const ExternalPlugin = props => {
           <script src="https://cdn.amplitude.com/libs/analytics-browser-2.9.3-min.js.gz"></script>
           <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.6.8-min.js.gz"></script>
           <script src="https://cdn.amplitude.com/libs/plugin-autocapture-browser-1.0.0-min.js.gz"></script>     
-
-
         <script
             async
             dangerouslySetInnerHTML={{
@@ -280,9 +278,8 @@ const ExternalPlugin = props => {
             `
             }}
           />     
-        </>)
-
-      }
+        </>
+        )}
 
       {COMMENT_DAO_VOICE_ID && (
         <>
