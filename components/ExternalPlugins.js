@@ -256,7 +256,7 @@ const ExternalPlugin = props => {
       )}
       {
 
-        (<>
+        (CLARITY_ID && <>
         
         <script
             async
@@ -280,10 +280,7 @@ const ExternalPlugin = props => {
                window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 })).promise.then(function () {
         window.amplitude.init("c7f849b23574b8657bc31e7bd66735eb", {
             autocapture: { elementInteractions: true }
-        });
-    });
-  });
-                `
+        });     `
             }}
           />
         
