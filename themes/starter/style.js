@@ -8,9 +8,40 @@
 const Style = () => {
   return <style jsx global>{`
 
+
+  /* 基础样式 */
+.iframe-container iframe {
+  width: 100%;      /* 宽度为容器的100% */
+  height: auto;     /* 高度自动 */
+  aspect-ratio: 16 / 9; /* 维持16:9的宽高比 */
+}
+
+/* 平板设备样式 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .iframe-container {
+    padding: 10px; /* 可以根据需要调整内边距 */
+  }
+}
+
+/* 桌面设备样式 */
+@media (min-width: 1025px) {
+  .iframe-container {
+    max-width: 800px; /* 限制最大宽度 */
+    margin: auto; /* 水平居中显示 */
+  }
+}
+
+/* 手机设备样式 */
+@media (max-width: 767px) {
+  .iframe-container {
+    padding: 5px; /* 对小屏设备减少内边距 */
+  }
+}
+
+
   #theme-starter .sticky{
     position: fixed;
-    z-index: 20;
+    z-index: 9999;
     background-color: rgb(255 255 255 / 0.8);
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -54,11 +85,6 @@ const Style = () => {
     color: rgb(55 88 249 / var(--tw-text-opacity));
     opacity: 1;
   }
-
-  #theme-starter .sticky #navbarCollapse li > button{
-    --tw-text-opacity: 1;
-    color: rgb(17 25 40 / var(--tw-text-opacity));
-  }
   
   :is(.dark #theme-starter .sticky #navbarCollapse li > a){
     --tw-text-opacity: 1;
@@ -69,12 +95,7 @@ const Style = () => {
     --tw-text-opacity: 1;
     color: rgb(55 88 249 / var(--tw-text-opacity));
   }
-
-  :is(.dark #theme-starter .sticky #navbarCollapse li > button){
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
+  
   #navbarCollapse li .ud-menu-scroll.active{
     opacity: 0.7;
   }
